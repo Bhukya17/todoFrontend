@@ -1,15 +1,13 @@
 
-// src/components/showTodoList.jsx
-
 import {useState, useEffect, useContext} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
-import {UpdateTodo} from './updateTodo'; // added
+import {UpdateTodo} from './updateTodo'; 
 import UserContext from '../context/UserContext';
 import {UserDetails} from './userDetails';
 import { toast } from 'react-toastify';
 
-function TodoCard({data, handleEdit, handleDelete}) { // updated
+function TodoCard({data, handleEdit, handleDelete}) {  updated
   const {_id, title, description} = data;
 
   return (
@@ -33,9 +31,9 @@ function TodoCard({data, handleEdit, handleDelete}) { // updated
 
 export function ShowTodoList() {
   const [todo, setTodo] = useState([]);
-  const [open, setOpen] = useState(false); // added
-  const [id, setId] = useState(''); // added
-  const [update, setUpdate] = useState(false); // added
+  const [open, setOpen] = useState(false); 
+  const [id, setId] = useState(''); 
+  const [update, setUpdate] = useState(false);
   const {setUserData} = useContext(UserContext);
   const {userData} = useContext(UserContext);
   const [openProfile, setOpenProfile] = useState(false);
@@ -58,32 +56,32 @@ export function ShowTodoList() {
               console.log(err.message);
             });
       },
-      [update], // updated
+      [update], 
   );
 
-  function handleEdit(e) { // added
+  function handleEdit(e) { 
     setId(e.target.name);
     setOpen(true);
   }
 
-  function handleUpdate() { // added
+  function handleUpdate() { 
     console.log('update:', update, !update);
     setUpdate(!update);
   }
 
-  function handleDelete(e) { // added
+  function handleDelete(e) { 
     axios.delete(`http://localhost:8000/api/todo/${e.target.name}`);
 
     setTodo((data) => {
       return data.filter((todo) => todo._id !== e.target.name);
     });
     toast.success('Todo deleted', {
-      autoClose: 35, // Set the duration in milliseconds (e.g., 3000 for 3 seconds)
+      autoClose: 35,
       position: toast.POSITION.TOP_CENTER
     });
   }
 
-  function handleClose() { // added
+  function handleClose() { 
     setId('');
     setOpen(false);
   }

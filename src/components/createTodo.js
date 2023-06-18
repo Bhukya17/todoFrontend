@@ -33,7 +33,7 @@ export function CreateTodo() {
           setData({title: '', description: ''});
           console.log(res.data.message);
           toast.success('New todo created!', {
-            autoClose: 25, // Set the duration in milliseconds (e.g., 3000 for 3 seconds)
+            autoClose: 25,
             position: toast.POSITION.TOP_CENTER
           });
         })
@@ -41,7 +41,7 @@ export function CreateTodo() {
           console.log('Error couldn\'t create TODO');
           console.log(err.message);
           toast.error('New todo not created!', {
-            autoClose: 25, // Set the duration in milliseconds (e.g., 3000 for 3 seconds)
+            autoClose: 25,
             position: toast.POSITION.TOP_CENTER
           });
         });

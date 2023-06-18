@@ -45,7 +45,6 @@ function Login() {
         type="text"
         name="email"
         className="input"
-        // value={title}
         onChange={(e) => setEmail(e.target.value)} />
       <label htmlFor="description" className="label">
         Password
@@ -53,7 +52,6 @@ function Login() {
       <input
         type="text"
         name="Password"
-        // value={description}
         className="input"
         onChange={(e) => setPassword(e.target.value)} />
       <button disabled={loading} type="submit" className="button">

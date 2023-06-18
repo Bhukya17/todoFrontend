@@ -1,5 +1,3 @@
-// src/components/updateTodo.jsx
-
 import {useState} from 'react';
 import axios from 'axios';
 

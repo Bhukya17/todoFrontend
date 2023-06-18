@@ -1,5 +1,3 @@
-// src/components/updateTodo.jsx
-
 import {useState, useEffect} from 'react';
 import axios from 'axios';
 
@@ -25,7 +23,7 @@ export function UserDetails({_id, handleClose, handleUpdate}) {
               console.log(err.message);
             });
       },
-      [data], // updated
+      [data],
   );
 
   return (
