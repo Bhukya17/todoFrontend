@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import UserContext from '../context/UserContext';
-import {ShowTodoList} from './showTodoList';
+import {Dashboard} from './Dashboard';
 import Login from '../components/Login';
 
 function Home() {
@@ -10,7 +10,7 @@ function Home() {
     <div>
       {userData.user ? (
         <>
-          <ShowTodoList />
+          <Dashboard />
         </>
       ) : (
         <>

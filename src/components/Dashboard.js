@@ -7,7 +7,7 @@ import UserContext from '../context/UserContext';
 import {UserDetails} from './userDetails';
 import { toast } from 'react-toastify';
 
-function TodoCard({data, handleEdit, handleDelete}) {  updated
+function TodoCard({data, handleEdit, handleDelete}) {
   const {_id, title, description} = data;
 
   return (
@@ -29,7 +29,7 @@ function TodoCard({data, handleEdit, handleDelete}) {  updated
   );
 }
 
-export function ShowTodoList() {
+export function Dashboard() {
   const [todo, setTodo] = useState([]);
   const [open, setOpen] = useState(false); 
   const [id, setId] = useState(''); 
